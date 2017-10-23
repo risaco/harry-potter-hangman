@@ -1,0 +1,36 @@
+body {
+	background-image: url("../images/header-background.jpg");
+	background-repeat: no-repeat;
+}
+
+#gameSection {
+	/*background-image: url("../images/wand-background-2.png");
+	background-repeat: no-repeat;
+	background-position: bottom;*/
+}
+
+/* Font for Harry Potter theme */
+h1, h2, h3, h4, h5, h6, p {
+	font-family: 'Fontdiner Swanky', cursive;
+	text-align: center;
+	color: white;
+}
+
+.jumbotron {
+	color: white;
+	background-image: url("../images/header-background.jpg");
+}
+
+/*#photoClue {
+	visibility: hidden;
+}*/
+
+/*#sectionBox {
+	background-color: yellow;
+}*/
+
+footer {
+	margin-top: 20px;
+	padding:20px;
+	/*background-color: orange;*/
+}
