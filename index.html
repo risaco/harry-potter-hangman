@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman | Harry Potter Edition</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- font -->
+	<link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+	<!-- main container -->
+	<div class="container-fluid" id="mainBox">
+
+		<!-- header -->
+		<div class="jumbotron">
+			<h1 class="mainHeading">Harry Potter&trade; Hangman</h1>
+			<!-- <h2>Harry Potter Edition</h2> -->
+			<h3 class="mainHeading">Press any key to get started!</h3>
+		</div>
+
+		<!-- main row comprised of two columns -->
+		<div class="row" id="sectionBox">
+
+			<!-- empty column for spacing -->
+			<div class="col-md-1"></div>
+
+			<!-- left column for #photoClue -->
+			<div class="col-md-5" id="photoClue">
+
+				<img src="http://fpoimg.com/300x300" class="img-responsive center-block" alt="Responsive image" id="currentImage">
+
+				<!-- <a href='http://www.freepik.com/free-vector/magic-wand-collection_1110450.htm'>Designed by Freepik</a> -->
+
+			</div>
+
+			<!-- right column for #gameSection -->
+			<div class="col-md-5" id="gameSection">
+
+				<!-- first row, #currentWord -->
+				<div class="row arrayRows" id="firstRow">
+
+					<h3>Current Word</h3>
+					<p id="word"></p>
+
+				</div>
+
+				<br>
+
+				<!-- second row, #guesses -->
+				<div class="row arrayRows" id="secondRow">
+
+					<h3>Already Guessed</h3>
+					<p id="guesses"></p>
+
+				</div>
+
+				<br>
+
+				<!-- last row, #wins -->
+				<div class="row contentRow" id="lastRow">
+
+					<h3 id="wins">Wins:	0</h3>
+
+				</div>
+
+			</div>
+		</div>
+
+		<!-- copyright footer -->
+		<footer>
+
+			<h6>I'm just a super-fan creating a cool game. I do not own any of the images used for this game.</h6>
+			<h6>All images and character names belong to Warner Bros. and/or the creator, author J.K. Rowling -- bless her two times for creating the world that is Harry Potter&trade;.</h6>
+			<br>
+			<h6>&copy; Copyright 2017 Rhia Dixon</h6>
+
+		</footer>
+
+	</div>
+
+
+</body>
+
+<script src="assets/javascript/game.js"></script>
+
+</html>
