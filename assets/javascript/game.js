@@ -3,11 +3,13 @@ var easyWords = ["harry", "hermione", "ronald", "dumbledore", "bellatrix", "snap
 
 // extra words: "gringotts", "quidditch"
 
-var hardWords = ["the boy who lived", "hermione granger", "ronald weasley", "albus dumbledore", "gringotts", "chudley cannons", "bellatrix lestrange", "severus snape", "godric gryffindor", "salazar slytherin", "rowena ravenclaw", "nearly headless nick", "wizengamot", "grindelwald", "draco malfoy", "sirius black", "order of the phoenix"];
+var hardWords = ["the boy who lived", "hermione granger", "ronald weasley", "albus dumbledore", "bellatrix lestrange", "severus snape", "hogwarts school of witchcraft and wizardy", "pensieve", "godric gryffindor", "helga hufflepuff", "salazar slytherin", "rowena ravenclaw", "azkaban", "diadem", "rubeus hagrid", "wizengamot", "tom marvolo riddle", "hedwig", "expecto patronum"];
+
+// extra words: "gringotts", "chudley cannons", "nearly headless nick", "grindelwald", "draco malfoy", "sirius black"
 
 // =============== GLOBAL VARIABLES ===============
 
-var gameMode = easyWords; // sets default gameMode to easy
+var gameMode = hardWords; // sets default gameMode to easy
 var rand; // holds random word from the applicable dictionary
 var randIndex; // location of random word in applicable dictionary
 var currentWord = []; // will display blanks and fill them in with userGuess
@@ -36,7 +38,7 @@ var createImage = function(src, title) {
 // array of images
 var images = [];
 
-// push two images to the array
+// push images to the array
 images.push(createImage("assets/images/harry-potter.jpg", "the boy who lived"));
 images.push(createImage("assets/images/hermione.jpg", "the brightest wizard of her age"));
 images.push(createImage("assets/images/ronald.jpg", "the red haired best friend"));
@@ -68,6 +70,7 @@ function pickRandomWord(arr) {
 	rand = x; // stores word in global variable
 	randIndex = arr.indexOf(x);
 
+
 	console.log(rand);
 	console.log(randIndex);
 	console.log(rand.length);
@@ -77,32 +80,77 @@ function pickRandomWord(arr) {
 
 	document.getElementById("currentImage").src = currentImage.src;
 
+
+
 	var dashes = "";
 
   // This loop checks and changes the word to blank spaces and stores the new 'blank'
   // word as dashes to be displayed on screen
 	for (i = 0; i < rand.length; i++) {
-	  if (i == rand.length-1) {
+    // if this is the last character in the word
+    if (i == rand.length-1) {
 	  	dashes += "_";
-	  } else if (rand.charAt(i) == " ") {
-	    dashes += " ";
-	  } else if (rand.charAt(i) == "'") {
-	  	dashes += "' ";
-	  } else {
+	  }
+    // if any other character is a space
+    else if (rand.charAt(i) == " ") {
+	    dashes += "- ";
+	  }
+    // if any other character is an apostrophe
+    else if (rand.charAt(i) == "\'") {
+	  	dashes += "\' ";
+	  }
+    // any other character (should be a letter a-z)
+    else {
 	    dashes += "_ ";
 	  }
 
 	}
 
-	console.log(dashes);
+  // displays the selected word as a string of underscores and spaces
+  console.log("current word as dashes: " + dashes);
+  console.log("length of dashes: " + dashes.length);
 
-	currentWord = dashes.split(" ");
+  // Chops out spaces and puts dashes into the currentWord array where each letter is in its own location
+  if (gameMode == easyWords) {
+    // example: snape ==> ["s", "n", "a", "p", "e"] ==> ["_", "_", "_", "_", "_"]
+    currentWord = dashes.split(" ");
+  }
+  else {
+    // example: harry potter ==> ["h","a","r","r","y","  ","p", "o","t","t","e","r"] ==> ["_","_","_","_","_","  ","_", "_","_","_","_","_"]
+    // check for blank spaces
+    var isBlank = "-";
+    var blankIndex = [];
+    var x; // will store the location of the blank and divide by two
+    for (j=0; j<dashes.length; j+=2) {
+      if (dashes.charAt(j) == isBlank) {
+        x = j/2;
+        blankIndex.push(x);
+      }
 
-	// console.log(currentWord);
+    }
+    console.log("blank index: " + blankIndex);
+    var hardWord = dashes.split(" ");
+
+
+    // if there are blanks, the blankIndex will be greater than 0
+    if (blankIndex.length>0){
+      for(y = 0; y<blankIndex.length; y++){
+        var ind = blankIndex[y];
+        hardWord[ind] = "&nbsp"; // changes the empty slot to a non-breaking space
+      }
+      console.log("hard word as dashes: " + hardWord);
+    }
+
+    currentWord = hardWord;
+  }
+
+
+	console.log(currentWord);
+  console.log("length of current word: " + currentWord.length);
 
 	document.getElementById("word").innerHTML = currentWord.join(" ");
 
-	remainingAttempts = rand.length + 6;
+	remainingAttempts = rand.length;
 
 	// console.log(remainingAttempts);
 
