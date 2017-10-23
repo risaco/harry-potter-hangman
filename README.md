@@ -7,6 +7,7 @@ This application is based on the traditional Hangman game. The project highlight
   The letters 'appear' once guessed, with all multiples of a single guessed letter appearing simultaneously.
   The words are chosen at random.
   The random words are linked to a photo clue.
+  The game is currently set to hardWords mode (this can be changed by switching the code in the game.js file).
 
 ### How to Play
 Press any key to start guessing the words associated with the displayed picture.
