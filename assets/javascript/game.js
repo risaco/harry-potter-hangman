@@ -230,9 +230,10 @@ window.onload = function (newGame) {
 					// console.log(wrongGuess);
 
 					if(wrongGuess === 6) {
-
-						setTimeout(function() {alert("GAME OVER")}, 200);
-						location.reload();
+						setTimeout(function() {
+              alert("GAME OVER");
+              location.reload();
+            }, 200);
 					}
 
 				} else {
