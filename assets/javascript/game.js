@@ -259,7 +259,8 @@ window.onload = function (newGame) {
 
 					wins += 1;
           document.getElementById("wins").innerHTML = "Wins: " + wins;
-					setTimeout(function() {
+          // this timeout allows the full word to display upon winning prior to the alert pop-up
+          setTimeout(function() {
             alert("YOU WIN!");
             //reset
   					pickRandomWord(gameMode);

@@ -15,9 +15,16 @@ You can only guess a letter once during the round (all multiples of the letter g
 Wins are tracked, losses are not.
 The next word automatically appears once the round has been won or lost.
 
+### Initial screen
+![alt text](/assets/images/harry-potter-hangman-1)
+
+### Guessing During Game
+![alt text](/assets/images/harry-potter-hangman-3)
+
+### Winning
+![alt text](/assets/images/harry-potter-hangman-2)
+
+### [Play the Game!](https//risaco.github.io/harry-potter-hangman)
+
 ### Technologies:
-HTML 5
-CSS
-JavaScript
-Bootstrap
-Google Fonts
+HTML5 | CSS | JavaScript | Bootstrap | Google Fonts
