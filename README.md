@@ -16,13 +16,13 @@ Wins are tracked, losses are not.
 The next word automatically appears once the round has been won or lost.
 
 ### Initial screen
-![alt text](/assets/images/harry-potter-hangman-1)
+![alt text](assets/images/harry-potter-hangman-1.PNG "Start Screen")
 
 ### Guessing During Game
-![alt text](/assets/images/harry-potter-hangman-3)
+![alt text](assets/images/harry-potter-hangman-3.PNG "During Game Play")
 
 ### Winning
-![alt text](/assets/images/harry-potter-hangman-2)
+![alt text](assets/images/harry-potter-hangman-2.PNG "Winning")
 
 ### [Play the Game!](https//risaco.github.io/harry-potter-hangman)
 
