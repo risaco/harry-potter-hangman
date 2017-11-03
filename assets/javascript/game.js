@@ -166,6 +166,10 @@ function changeCase(y) {
 	// console.log(userGuess);
 } // END of changeCase function
 
+function reset() {
+
+}
+
 // =============== FUNCTION CALLS ===============
 
 // ******* INITIAL START *******
@@ -227,7 +231,7 @@ window.onload = function (newGame) {
 
 					if(wrongGuess === 6) {
 
-						alert("GAME OVER");
+						setTimeout(function() {alert("GAME OVER")}, 200);
 						location.reload();
 					}
 
@@ -254,16 +258,16 @@ window.onload = function (newGame) {
 				if(blanksLeft === -1) {
 
 					wins += 1;
-					alert("YOU WIN!");
-
-					document.getElementById("wins").innerHTML = "Wins: " + wins;
-
-					//reset
-					pickRandomWord(gameMode);
-					currentAttempt=currentWord;
-					guesses=[];
-					document.getElementById("guesses").innerHTML = guesses.join(",  ");
-					wrongGuess = 0;
+          document.getElementById("wins").innerHTML = "Wins: " + wins;
+					setTimeout(function() {
+            alert("YOU WIN!");
+            //reset
+  					pickRandomWord(gameMode);
+  					currentAttempt=currentWord;
+  					guesses=[];
+  					document.getElementById("guesses").innerHTML = guesses.join(",  ");
+  					wrongGuess = 0;
+          },200);
 
 				}
 			} // END of testing for blanks
